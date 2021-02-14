@@ -1,15 +1,22 @@
-## Welcome to GitHub Pages
+## Covid-19 Bus Model Presentation
 
-You can use the [editor on GitHub](https://github.com/farhoodensan/BusPresentation/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+In this website, we will introduce our project, go over the logistics, and put out some visualization on the outputs.
 
-### Markdown
+## Introduction
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We are focussing on controlling the spread of the coronavirus, as it relates to reopening of schools for in-person education. Specifically, we are investigating infections of this virus in a school bus setting, with the goal to simulate the spread of COVID-19, using agent-based modeling. We will simulate the bus journey that school children travel through, and map out the bus, with programmed virtual agents (people: students and bus officials), seating in buses, movement, and the infection spread through the source patient. Agent-based modeling is a useful tool to simulate real-life events so that we don’t have to create an actual experiment to further study them. This avoids any risk, costs, and human effort that experiments may entail. The purpose of our replication is to be able to observe and analyze the effect of changing measurable parameters such as passenger movement, social distancing, temperature, wearing masks, risk radius, closure of vents, etc. on the impact and spread of the virus, and understand how we can use this knowledge to set better precautions and preparations for future group travel during this pandemic, such as children going to school, and minimize disease infection risk among the population. Our results will include guidelines on key parameters to focus on for safe school reopening. 
+
+## Methods
+
+### ABM
+(explaining Agent Based Modeling, pros and limitations)
+
+### Parameter Implementation
+(Discussing the features that went into this model, the reasonings behind them, and links to how we implemented each of them)
 
 ```markdown
-Syntax highlighted code block
+Showing pieces of our code to show how we implemented the features
 
 # Header 1
 ## Header 2
@@ -26,12 +33,58 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Model Initialization
+(Explaining the decisions that went into initializing the model, what they mean, and how they represent real life situations)
 
-### Jekyll Themes
+```markdown
+Showing `Code`  where we initialize the model
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/farhoodensan/BusPresentation/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+Showing images of our initialized bus model that is empty, with a link to a spreadsheet of the details about the bus, and our agents
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Link](url) and ![Image](src)
+```
+
+### Simulating the Model
+(Explaining what happens when we start the simulation, how we keep track of our agents, etc)
+```markdown
+Showing `Code` of each step
+
+Explaining what happens in the steps by order
+1. students breathe
+2. coughs/ sneezes/ etc
+3. etc
+
+Showing snapshots of some of the steps with details of that steps
+[Link](url) and ![Image](src)
+```
+
+
+
+## Results
+```markdown
+Showing `Code`  where our visualizations are produced
+
+Links and images of our viz
+[Link](url) and ![Image](src)
+```
+
+### Infection Spread Graph
+```markdown
+a PNG image of the graph
+![Image](src)
+```
+
+### Step by step GIF
+```markdown
+a GIF of the bus and agents in each step
+![Image](src)
+```
+
+### Comparing results of different scenarios
+```markdown
+Comparing graphs, and GIFs next to one another with their parameters listed for visual comparisons
+![Image](src)
+```
+
+
