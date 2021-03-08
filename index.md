@@ -21,10 +21,8 @@ We chose agent-based modeling to simulate the worship event last quarter and to 
 ### Data 
 The data we use to integrate with our bus model for our simulations comes from the San Diego Unified School District database. This dataset contains information about school bus trips in the San Diego district. We extract information about routes, timings, stops, locations, schools, and the number of students at each stop, for trips to and from the schools. This dataset included over 1100 different routes. For each route, we had a route ID, type of route (with or without wheelchair), and addresses for each stop, including the school it goes to. For each of these stops, we have address information, Thomas Brothers location, time the bus reaches the stop, and the number of students it picks up or drops off at that stop.  By using spatial data manipulation services like ArcGIS and GeoPandas, we were able to find geometric locations for all of these stops in our dataset, and include the geocoded locations in our data. Most of our key parameters related to bus trips, such as trip time, the number of students at each stop, etc., are imported from this dataset, into our model.
 
+Here is a screenshot of the first function we used to clean and reformat the data:
 
-```markdown
-Showing pieces of our `Code`  to show how we implemented the features
-```
 ![First step of cleaning the data](/pics/1.png)
 
 
@@ -35,70 +33,39 @@ To initialize the model, we create a bus with certain features replicating a rea
 
 We do all this through the Mesa-Geo library. To initialize the model, we make an agent class with the features named above. We are using a bus class, which is a subclass to a Classroom type. The bus is similar to a classroom in many ways, such as having a limited volume with a certain air change per hour rate. They both have seats which students can take and spend some amount of time during various activities. At the same time, the bus needs some extra parameters, which led us to make it a separate class of its own. Each bus also needs to be assigned to a route, each bus needs to pick up and drop off students at certain times and locations.
 
-
-
-```markdown
-Showing `Code`  where we initialize the model
-
-
-Showing images of our initialized bus model that is empty, with a link to a spreadsheet of the details about the bus, and our agents
-
-```
+Here is the code that initializes the model:
+![Initializing the model](/pics/3.png)
 
 ### Simulating the Model
 We make changes in some of our parameters for the simulations, to be able to measure the impact of that change on the spread of the disease and try to pinpoint important factors to help slow that spread. These parameters include the details discussed in the previous paragraph about the San Diego Unified School District dataset. They also include different seating arrangements based on social distancing guidelines, mask-wearing probabilities, types of masks used, and probabilities of different activities and interactions between the students in the bus. 
 
 During our simulations, as students spend more time on the bus, the density of the virus increases in the bus atmosphere, and that results in a higher rate of transmission of the virus. We keep track of infection counts and rates during each of our simulations, and then we produce graphs of the changes in infections concerning key parameters changes, to show the impact of that particular parameter on the spread of the virus, over time and different simulations. We can simulate bus trips of children going to school, and our further analysis is collecting and analyzing infection data from these trips, based on various key factors.
 
-```markdown
-Showing `Code` of each step
-
-Explaining what happens in the steps by order
-1. students breathe
-2. coughs/ sneezes/ etc
-3. etc
-
-Showing snapshots of some of the steps with details of that steps
-
-```
+Here is a sample simulation by step:
+![GIF of sample simulation](/pics/results.gif)
 
 
 
 ## Results
-```markdown
-Showing `Code`  where our visualizations are produced
 
-Links and images of our viz
-```
 
 As an example, here we are simulating a real route (Route:T017  BA in SDUSD dataset) with different sets of guidelines and recording the different outcomes. At first, we had all the windows rolled up, A/C is off, and no one is wearing masks or practicing social distancing. In this example, we see how dangerous a single bus ride could be, as our initial 2 sick people infected an additional 13 students, for a total of 15 sick people (2 infectious and 13 exposed). In this example, 2/26 (7.7%) of our population was infectious and 13/26 (50%) ended up being exposed. This would be a similar outcome to the worship bus that we simulated last quarter (Shen, Ye; et al,2020). We could also see that as time goes on and the density of the virus in this closed system increases, the rate at which new students get exposed to the virus increases as well.
 
 
 
-```markdown
-Showing `Code`  where our visualizations are produced
-
-Links and images of our viz
-```
+![Visualization of the first scenario](/pics/r1.jpg)
 
 We then repeated the same route’s simulation with 90% of the students wearing masks, but still without any outside air circulation or social distancing within the bus. In this scenario, we see that the spread is much slower, but it still happens within the 58-minute trip. In this example, 2/26 (7.7%) of our population was infectious and 4/26 (15%) ended up being exposed.
 
 
 
-```markdown
-Showing `Code`  where our visualizations are produced
+![Visualization of the second scenario](/pics/r2.jpg)
 
-Links and images of our viz
-```
 
 Finally, we repeated the experiment with 100% of the students properly wearing masks, windows rolled down, and students seated in a zigzag pattern where they maximize their distances. In this simulation, none of the 24 healthy students got exposed to the virus in this 58-minute bus ride to school.
 
 
-Sample of how a simulation works
-### Step by step GIF
-```markdown
-a GIF of the bus and agents in each step
-```
+![Visualization of the third scenario](/pics/r3.jpg)
 
 
 ## Conclusions
