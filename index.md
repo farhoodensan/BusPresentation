@@ -24,6 +24,7 @@ The data we use to integrate with our bus model for our simulations comes from t
 
 ```markdown
 Showing pieces of our `Code`  to show how we implemented the features
+![First step of cleaning the data](/pics/1.png)
 
 ```
 
