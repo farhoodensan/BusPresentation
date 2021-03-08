@@ -24,9 +24,11 @@ The data we use to integrate with our bus model for our simulations comes from t
 
 ```markdown
 Showing pieces of our `Code`  to show how we implemented the features
+```
 ![First step of cleaning the data](/pics/1.png)
 
-```
+
+
 
 ### Model Initialization
 To initialize the model, we create a bus with certain features replicating a real school bus that we measured thoroughly on a field trip that happened in early February. These features include the seating arrangement, number of rows and columns of seats, dimensions of seats (width, length, height), dimensions of spaces within the bus (the aisle, legroom, etc.), and the length, width, and arc of the ceiling of the bus to measure the inside volume. We also recorded the arrangement of windows, alongside their dimensions to more accurately calculate the airflow rate during the trips. Once we have the bus initialized, we need to add our initial agents to the model. Each passenger agent has certain parameters that are set in the model initialization step. The main parameters here are the health indicator, the location of the agent in the bus, their daily schedule at school, their route id, and their bus stop id.
